@@ -32,16 +32,15 @@ stages:
   displayName: "terraforming on Azure"
   dependsOn: Build
   jobs:
-    - job: Provision
-      displayName: 'Provisioning Container Instance'
-      pool:
-       vmImage: ubuntu-latest
+  - job: Provision
+    displayName: 'Provisioning Container Instance'
+    pool:
+      vmImage: ubuntu-latest
       variables:
         -group: TerraformEnvVars
       steps:
         - script: 
             set ubuntu-latest
-
             terraform init -input=false
             terraform applay -input=false -auto-approve
           name: 'RunTerraform'
