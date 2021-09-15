@@ -35,12 +35,13 @@ stages:
   - job: Provision
     displayName: 'Provisioning Container Instance'
     pool:
-      vmImage: ubuntu-latest
+      vmImage: 'ubuntu-latest'
       variables:
         -group: TerraformEnvVars
       steps:
         - script: 
-            set ubuntu-latest
+            set e
+
             terraform init -input=false
             terraform applay -input=false -auto-approve
           name: 'RunTerraform'
