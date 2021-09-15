@@ -39,8 +39,9 @@ stages:
     variables:
     - group: TerraformEnvVars
     steps:
-    - script: 
+    - script: |
             set e
+
             terraform init -input=false
             terraform applay -input=false -auto-approve
       name: 'RunTerraform'
