@@ -36,10 +36,10 @@ stages:
     displayName: 'Provisioning Container Instance'
     pool:
       vmImage: 'ubuntu-latest'
-      variables:
-        -group: TerraformEnvVars
-      steps:
-        - script: 
+    variables:
+    - group: TerraformEnvVars
+    steps:
+    - script: 
             set e
 
             terraform init -input=false
